@@ -1,0 +1,12 @@
+name: HowTwo
+version: 1.0
+api-version: 1.14
+main: de.sunjx.howto.HowTo
+authors:
+  - SunsetGFX
+  - JX
+commands:
+  howto:
+    description: Default howto command
+  course:
+    description: Default course command

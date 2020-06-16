@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="HowTo:jar">
+    <output-path>$USER_HOME$/Desktop/Coden/Java/Minecraft Programming Server/NoBungeeServer/plugins</output-path>
+    <root id="archive" name="HowTo.jar">
+      <element id="module-output" name="HowTo" />
+      <element id="module-source" name="HowTo" />
+    </root>
+  </artifact>
+</component>
