@@ -54,7 +54,7 @@ public enum Language {
                 cfg.set("NoPermissions", "&cDu hast nicht die Berechtigung, den Befehl auszuführen.");
                 cfg.set("NoPlayer", "&cDu musst ein Spieler sein!");
                 cfg.set("JoinMessage", "&7Hallo &b@%player%&7, wenn du das Tutorial starten willst, führe &9/course" + " §7aus. %n%Dort wirst du weitere Hilfe bekommen.");
-                cfg.set("AlreadyInCourse", "&7Du bist bereits im Kurs eingetragen. %n%Wenn du fortfahren möchtest, benutze &9/course continue &7.");
+                cfg.set("AlreadyInCourse", "&7Du bist bereits im Kurs eingetragen. %n%Wenn du fortfahren möchtest, benutze &9/course continue&7.");
 
                 cfg.save(getFilePath());
             } catch (IOException e) {
@@ -71,8 +71,8 @@ public enum Language {
                 //Defaults here
                 cfg.set("NoPermissions", "&cYou dont have the permissions, to perform that command.");
                 cfg.set("NoPlayer", "&cYou need to be a player!");
-                cfg.set("JoinMessage", "&7Hey &b@%player%&7, if you want to start the Tutorial, do &9/course" + " §7aus. %n%There you will get more informations.");
-                cfg.set("AlreadyInCourse", "&7You are already in the course. %n%If you wan't to continue, use &9/course continue &7.");
+                cfg.set("JoinMessage", "&7Hey &b@%player%&7, if you want to start the Tutorial, do &9/course" + "&7. %n%There you will get more informations.");
+                cfg.set("AlreadyInCourse", "&7You are already in the course. %n%If you wan't to continue, use &9/course continue&7.");
 
                 cfg.save(getFilePath());
             } catch (IOException e) {

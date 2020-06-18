@@ -4,6 +4,8 @@ import de.sunjx.howto.HowTo;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+
 /**
  * @author reaL on 05.04.2020 at 02:46
  * All rights reserved to @author reaL or Shortlog.
@@ -20,9 +22,14 @@ public class Data {
             tabSpace = "    ";
 
 
+    private ArrayList<String> subCommands = new ArrayList<String>();
 
     public Data() {
 
+    }
+
+    public ArrayList<String> getSubCommands() {
+        return subCommands;
     }
 
     public String getPrefix() {
@@ -68,18 +75,24 @@ public class Data {
             p.sendMessage(prefixSpacer + "§7» §e/course start §7- §9Beginne deine Reise in's Java Universum.");
             p.sendMessage(prefixSpacer + "§7» §e/course contents §7- §9Zeige dir das Inhaltsverzeichnis an");
             p.sendMessage(prefixSpacer + "§7» §e/course language §7- §9Ändere deine Sprache.");
+            p.sendMessage(prefixSpacer + "§7» §e/course state §7- §9Frage deinen aktuellen Status im Kurs ab.");
+            p.sendMessage(prefixSpacer + "§7» §e/course reset §7- §9Setze deinen Fortschritt zurück.");
         } else if(HowTo.getLangString().equalsIgnoreCase("en")) {
             p.sendMessage(prefix + "§7Use the following commands:");
             p.sendMessage(prefixSpacer + "§7» §e/course help §7- §9Show the help.");
             p.sendMessage(prefixSpacer + "§7» §e/course start §7- §9Start with your journey into the java universe.");
             p.sendMessage(prefixSpacer + "§7» §e/course contents §7- §9Show the table of contents.");
             p.sendMessage(prefixSpacer + "§7» §e/course language §7- §9Change your language.");
+            p.sendMessage(prefixSpacer + "§7» §e/course state §7- §9Check your current course state.");
+            p.sendMessage(prefixSpacer + "§7» §e/course reset §7- §9Reset your current progress.");
         } else {
             p.sendMessage(prefix + "§7Use the following commands:");
             p.sendMessage(prefixSpacer + "§7» §e/course help §7- §9Show the help.");
             p.sendMessage(prefixSpacer + "§7» §e/course start §7- §9Start with your journey into the java universe.");
             p.sendMessage(prefixSpacer + "§7» §e/course contents §7- §9Show the table of contents.");
             p.sendMessage(prefixSpacer + "§7» §e/course language §7- §9Change your language.");
+            p.sendMessage(prefixSpacer + "§7» §e/course state §7- §9Check your current course state.");
+            p.sendMessage(prefixSpacer + "§7» §e/course reset §7- §9Reset your current progress.");
         }
     }
     public void sendCourseTable(Player p) {

@@ -62,6 +62,7 @@ public class CourseManager {
     }
 
     public void resetFromCourse(Player player) {
+        for(int i = 0; i < 100; i++) { player.sendMessage(" "); } //clearer
         if(isPlayerInCourse(player)) {
 
 

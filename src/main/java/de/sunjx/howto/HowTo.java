@@ -63,12 +63,23 @@ public class HowTo extends JavaPlugin {
         getCommand("howto").setExecutor(new HowTwoCommand());
         getCommand("course").setExecutor(new CourseCommand());
 
+        //check which os for browser support.
         logConsole(getData().getPrefix() + "§8OS Found: §e" + osManager.getOS());
 
         pm.registerEvents(new PlayerJoinEventListener(), this);
 
         Language.getSupportedLangauges().add("de");
         Language.getSupportedLangauges().add("en");
+
+        data.getSubCommands().add("help");
+        data.getSubCommands().add("start");
+        data.getSubCommands().add("contents");
+        data.getSubCommands().add("language");
+        data.getSubCommands().add("state");
+        data.getSubCommands().add("reset");
+        data.getSubCommands().add("continue");
+
+        System.out.println(data.getSubCommands());
 
     }
     public void onDisable() {
@@ -93,6 +104,10 @@ public class HowTo extends JavaPlugin {
 
     public Language getLanguage() {
         return language;
+    }
+
+    public void setLanguage(Language language) {
+        HowTo.language = language;
     }
 
     public Data getData() {
