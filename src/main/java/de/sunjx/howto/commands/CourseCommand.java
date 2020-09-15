@@ -70,24 +70,34 @@ public class CourseCommand implements CommandExecutor, TabCompleter {
                         p.sendMessage(prefix + "§7To change the language, use §9/course language <language>");
                     }
                 } else if(args[0].equalsIgnoreCase("state")) {
-                    if (HowTo.getLangString().equalsIgnoreCase("de")) {
-                        p.sendMessage(prefix + "§7Dein akuteller Fortschritt im Kurs: ");
-                        p.sendMessage(prefixSpacer + "§7Level » §9" + HowTo.getInstance().getCourseManager().getCourseLevel(p));
-                        p.sendMessage(prefixSpacer + "§7Aufgabe » Führe §9/course continue §7aus.");
-                        p.sendMessage(prefix + "§7================================");
-                    } else if (HowTo.getLangString().equalsIgnoreCase("en")) {
-                        p.sendMessage(prefix + "§7Your current progress in the course: ");
-                        p.sendMessage(prefixSpacer + "§7Level » §9" + HowTo.getInstance().getCourseManager().getCourseLevel(p));
-                        p.sendMessage(prefixSpacer + "§7Aufgabe » Execute §9/course continue§7.");
-                        p.sendMessage(prefix + "§7================================");
-
+                    if(HowTo.getInstance().getCourseManager().isPlayerInCourse(p)) {
+                        LevelHandler levelHandler = new LevelHandler(p);
+                        levelHandler.sendLevel();
+                    } else {
+                        if(HowTo.getLangString().equalsIgnoreCase("de")) {
+                            p.sendMessage(prefix + "§cDu bist nicht im Kurs.");
+                        } else if(HowTo.getLangString().equalsIgnoreCase("en")) {
+                            p.sendMessage(prefix + "§cYou are not in the Course.");
+                        } else {
+                            p.sendMessage(prefix + "§cYou are not in the Course.");
+                        }
                     }
                 } else if(args[0].equalsIgnoreCase("continue")) {
-                    LevelHandler levelHandler = new LevelHandler(p);
-                    if(HowTo.getLangString().equalsIgnoreCase("de")) {
-                        levelHandler.sendLevel();
-                    } else if (HowTo.getLangString().equalsIgnoreCase("en")) {
-
+                    if(HowTo.getInstance().getCourseManager().isPlayerInCourse(p)) {
+                        LevelHandler levelHandler = new LevelHandler(p);
+                        if (HowTo.getLangString().equalsIgnoreCase("de")) {
+                            levelHandler.nextLevel();
+                        } else if (HowTo.getLangString().equalsIgnoreCase("en")) {
+                            levelHandler.nextLevel();
+                        }
+                    } else {
+                        if(HowTo.getLangString().equalsIgnoreCase("de")) {
+                            p.sendMessage(prefix + "§cDu bist nicht im Kurs.");
+                        } else if(HowTo.getLangString().equalsIgnoreCase("en")) {
+                            p.sendMessage(prefix + "§cYou are not in the Course.");
+                        } else {
+                            p.sendMessage(prefix + "§cYou are not in the Course.");
+                        }
                     }
                 } else {
                     p.sendMessage(prefix + "§7Please use a valid argument.");

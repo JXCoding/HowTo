@@ -40,7 +40,6 @@ public class CourseManager {
             }
         } else {
 
-
             Date now = new Date();
             SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
@@ -53,10 +52,13 @@ public class CourseManager {
             HowTo.getInstance().getScoreboardManager().sendSB(player);
             if(HowTo.getLangString().equalsIgnoreCase("de")) {
                 player.sendMessage(prefix + "§7Du bist nun im Kurs eingetragen.");
+                player.sendMessage(prefix + "§7Du kannst mit §9/course state §7deine aktuelle Aufgabe einsehen");
             } else if(HowTo.getLangString().equalsIgnoreCase("en")) {
                 player.sendMessage(prefix + "§7You are now in the Course.");
+                player.sendMessage(prefix + "§7With §9/course state §7you can see your active task.");
             } else {
                 player.sendMessage(prefix + "§7You are now in the Course.");
+                player.sendMessage(prefix + "§7With §9/course state §7you can see your active task.");
             }
         }
     }
@@ -91,6 +93,10 @@ public class CourseManager {
         return configManager.getString("Player." + p.getName() + ".joinedat");
     }
 
+    public void setCourseLevel(Player p, Double level) {
+        this.configManager.set("Player." + p.getName() + ".courselevel", level);
+    }
+
     public String getCourseLevel(Player p) {
         return configManager.getString("Player." + p.getName() + ".courselevel");
     }
@@ -107,4 +113,7 @@ public class CourseManager {
         }
     }
 
+    public ConfigManager getConfigManager() {
+        return configManager;
+    }
 }

@@ -30,10 +30,10 @@ public class HowTwoCommand implements CommandExecutor {
         if(args.length == 0) {
             //show only author
             if(HowTo.getLangString().equalsIgnoreCase("de")) {
-               p.sendMessage(prefix + "§7HowT(w)o Plugin von §b@JX §7und §b@SunsetGFX.");
+               p.sendMessage(prefix + "§7HowT(w)o Plugin von §b@_JXc §7und §b@SunsetGFX.");
                p.sendMessage(prefixSpacer + "§7Der einfachste Weg Java mit Minecraft zu lernen.");
            } else if(HowTo.getLangString().equalsIgnoreCase("en")) {
-               p.sendMessage(prefix + "§7HowT(w)o Plugin by §b@JX §7and §b@SunsetGFX.");
+               p.sendMessage(prefix + "§7HowT(w)o Plugin by §b@_JXc §7and §b@SunsetGFX.");
                p.sendMessage(prefixSpacer + "§7The easiest way to learn Java with Minecraft.");
            } else {
                p.sendMessage(prefix + "§7HowT(w)o Plugin by §b@JX §7and §b@SunsetGFX.");
